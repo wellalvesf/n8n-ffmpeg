@@ -16,6 +16,7 @@ services:
       - TZ=America/Sao_Paulo
     volumes:
       - n8n_data:/home/node/.n8n
+      - /opt/n8n-ffmpeg-files:/files
     networks:
       - sthub_net
     deploy:

@@ -5,16 +5,16 @@ services:
     image: wellalvesf/n8n-ffmpeg:latest
     container_name: n8n-ffmpeg
     ports:
-      - "5679:5678"
+      - "5679:5679"
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.n8n.rule=Host(\"flowffmpeg.sthub.com.br\")"
+      - "traefik.http.routers.n8n.rule=Host(`flowffmpeg.sthub.com.br`)"
       - "traefik.http.routers.n8n.entrypoints=websecure"
       - "traefik.http.routers.n8n.tls.certresolver=letsencrypt"
       - "traefik.http.services.n8n.loadbalancer.server.port=5679"
     environment:
       - N8N_HOST=flowffmpeg.sthub.com.br
-      - N8N_PORT=5678
+      - N8N_PORT=5679
       - N8N_PROTOCOL=https
       - WEBHOOK_URL=https://flowffmpeg.sthub.com.br
       - N8N_SECURE_COOKIE=false

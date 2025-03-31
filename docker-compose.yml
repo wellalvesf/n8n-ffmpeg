@@ -16,6 +16,12 @@ services:
     volumes:
       - n8n_data:/home/node/.n8n
     restart: always
+    networks:
+      - sthub_net
 
 volumes:
   n8n_data:
+
+networks:
+  sthub_net:
+    external: true

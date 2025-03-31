@@ -1,4 +1,4 @@
-essversion: "3"
+version: "3"
 
 services:
   n8n:

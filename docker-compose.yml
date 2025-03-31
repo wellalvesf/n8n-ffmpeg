@@ -1,9 +1,11 @@
-version: "3"
+essversion: "3"
 
 services:
   n8n:
     image: wellalvesf/n8n-ffmpeg:latest
     container_name: n8n-ffmpeg
+    ports:
+      - "5679:5678"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.n8n.rule=Host(\"flowffmpeg.sthub.com.br\")"
